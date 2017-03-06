@@ -1,0 +1,77 @@
+@import "./_vars.scss";
+@import "/static/fonts/fonts.css";
+
+body {
+  margin: 0;
+  padding: 0;
+  width: $screen-width;
+  height: $screen-height;
+  overflow: hidden;
+  strong, b {
+    font-weight: 600 !important;
+  }
+
+  h1, h2, h3, p, ul, li, footer {
+    margin: 0;
+    padding: 0;
+  }
+
+  #app {
+    background-color: $black;
+    width: $screen-width;
+    height: $screen-height;
+    font-family: 'Whitney A', 'Whitney B', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    #app-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 1;
+    }
+    #nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      #nav-container {
+        width: $screen-width;
+        padding: 100px;
+        .menu-button {
+          width: 405px;
+          height: 405px;
+          font-weight: bold;
+          font-size: $font-size-btn-label;
+          line-height: $font-size-btn-label + 16;
+          border: 5px solid $white;
+          margin-bottom: 50px;
+          margin-right: 50px;
+          background-color: $blue;
+          color: $white;
+          float: left;
+          text-align: center;
+          img {
+            margin-top: 30px;
+          }
+          img.logo {
+            margin-top: 110px;
+          }
+          .btn-img-reload {
+            margin-left: 20px;
+          }
+          span {
+            display:inline-block;
+            width: 200px;
+            margin-top: 80px;
+          }
+        }
+        .menu-button:focus {
+          outline: none;
+          background-color: $orange;
+        }
+      }
+    }
+  }
+}
