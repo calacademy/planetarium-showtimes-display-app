@@ -110,7 +110,8 @@ export default {
         .then(function (response) {
           return response.json()
         }).then(function (json) {
-          self.shows = json
+          // self.shows = json
+          self.shows = self.mergeDuplicateShows(json)
           self.shows.sort(function (a, b) {
             return a.time_slots[0] > b.time_slots[0]
           })
@@ -130,7 +131,8 @@ export default {
           .then(function (response) {
             return response.json()
           }).then(function (json) {
-            self.showsFresh = json
+            // self.showsFresh = json
+            self.showsFresh = self.mergeDuplicateShows(json)
             self.showsFresh.sort(function (a, b) {
               return a.time_slots[0] > b.time_slots[0]
             })
@@ -192,6 +194,37 @@ export default {
       var hours24 = parseInt(t.substring(0, 2), 10)
       var amPm = hours24 > 11 ? ' PM' : ' AM'
       return amPm
+    },
+    mergeDuplicateShows: function (arrShows) {
+      // now get NightLife
+      var arrShowsNightLife = arrShows.filter(function (item) {
+        return (item.special_restriction === 'NightLife Event')
+      })
+
+      var uniqueShowsNightLife = []
+      arrShowsNightLife.forEach(function (a) {
+        arrShowsNightLife.forEach(function (b) {
+          if ((a.title === b.title) && (a.nid !== b.nid)) {
+            var ts = a.time_slots.concat(b.time_slots)
+            ts.sort(function (x, y) {
+              return x > y
+            })
+            if (uniqueShowsNightLife.every(function (test) {
+              return test.title !== a.title
+            })) {
+              uniqueShowsNightLife.push(a)
+              uniqueShowsNightLife[uniqueShowsNightLife.length - 1].time_slots = ts
+            }
+          }
+        })
+        if (uniqueShowsNightLife.every(function (test) {
+          return test.title !== a.title
+        })) {
+          uniqueShowsNightLife.push(a)
+        }
+      })
+
+      return uniqueShowsNightLife
     }
   }
 }

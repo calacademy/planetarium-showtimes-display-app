@@ -112,7 +112,8 @@ export default {
         .then(function (response) {
           return response.json()
         }).then(function (json) {
-          self.shows = json
+          // self.shows = json
+          self.shows = self.mergeDuplicateShows(json)
           self.shows.sort(function (a, b) {
             return a.time_slots[0] > b.time_slots[0]
           })
@@ -132,7 +133,8 @@ export default {
           .then(function (response) {
             return response.json()
           }).then(function (json) {
-            self.showsFresh = json
+            // self.showsFresh = json
+            self.showsFresh = self.mergeDuplicateShows(json)
             self.showsFresh.sort(function (a, b) {
               return a.time_slots[0] > b.time_slots[0]
             })
@@ -177,6 +179,45 @@ export default {
       self.shows.sort(function (a, b) {
         return a.time_slots[0] > b.time_slots[0]
       })
+    },
+    mergeDuplicateShows: function (arrShows) {
+      // start with special entries (not including NightLife)
+      var arrShowsSpecial = arrShows.filter(function (item) {
+        return ((item.special_restriction === 'Member Event') ||
+        (item.special_restriction === 'School Groups Only'))
+      })
+
+      // now get non-special shows
+      var arrShowsNonSpecial = arrShows.filter(function (item) {
+        return ((item.special_restriction !== 'Member Event') &&
+        (item.special_restriction !== 'School Groups Only') &&
+        (item.special_restriction !== 'NightLife Event'))
+      })
+
+      var uniqueShowsNonSpecial = []
+      arrShowsNonSpecial.forEach(function (a) {
+        arrShowsNonSpecial.forEach(function (b) {
+          if ((a.title === b.title) && (a.nid !== b.nid)) {
+            var ts = a.time_slots.concat(b.time_slots)
+            ts.sort(function (x, y) {
+              return x > y
+            })
+            if (uniqueShowsNonSpecial.every(function (test) {
+              return test.title !== a.title
+            })) {
+              uniqueShowsNonSpecial.push(a)
+              uniqueShowsNonSpecial[uniqueShowsNonSpecial.length - 1].time_slots = ts
+            }
+          }
+        })
+        if (uniqueShowsNonSpecial.every(function (test) {
+          return test.title !== a.title
+        })) {
+          uniqueShowsNonSpecial.push(a)
+        }
+      })
+
+      return arrShowsSpecial.concat(uniqueShowsNonSpecial)
     }
   }
 }
