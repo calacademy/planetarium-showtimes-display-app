@@ -2,14 +2,7 @@
 
 VueJS web application for planetarium showtimes display.
 
-## Build Notes:
-
-### .env variable for webpack module bundler build
-The URL for the events data feed is saved as global EVENTS_API_URL variable
-expected by webpack for dev and prod distribution builds. The variable is
-saved in local .env file in project root and excluded from git repo.
-
-## Installation:
+## Installation
 
 Clone planetarium-showtimes-display-app repo locally.
 
@@ -41,6 +34,14 @@ e2e placeholder test in place.
 yarn test
 ```
 
+## Build Notes
+
+### .env variable for webpack module bundler build
+The URL for the events data feed is saved as global EVENTS_API_URL variable
+expected by webpack for dev and prod distribution builds. The variable is
+saved in local .env file in project root and excluded from git repo.
+
+
 ## Development and Production Builds
 
 Webpack build init scripts in package.json.
@@ -48,4 +49,14 @@ Webpack build init scripts in package.json.
 ```
 yarn dev
 yarn build
+```
+
+## Deploy Notes
+
+### .elasticbeanstalk/config.yml for eb cli deploy
+This directory/file should be placed in project root. It can be found in
+team technical documentation for project.
+
+```
+eb deploy
 ```
