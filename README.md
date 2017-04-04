@@ -54,8 +54,8 @@ yarn build
 ## Deploy Notes
 
 ### .elasticbeanstalk/config.yml for eb cli deploy
-This directory/file should be placed in project root. It can be found in
-team technical documentation for project.
+This directory/file should be placed in project root. Zipped file for this asset
+can be found in team technical documentation for project.
 
 ```
 eb deploy
