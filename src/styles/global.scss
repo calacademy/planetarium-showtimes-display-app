@@ -6,6 +6,7 @@ body {
   width: $screen-width;
   height: $screen-height;
   overflow: hidden;
+  cursor: none !important;
   strong, b {
     font-weight: 600 !important;
   }
