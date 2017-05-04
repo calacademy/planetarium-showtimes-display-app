@@ -17,7 +17,10 @@
   top: 0;
   left: 0;
   z-index: 2;
-  background-color: $nl-bgcolor;
+  //background-color: $nl-bgcolor;
+  background-image: url('~assets/nl-bg-gradient.png');
+  background-repeat: no-repeat;
+  background-position: 0 0;
   width: $screen-width;
   height: $screen-height;
   #passes-unavailable-standby-container {

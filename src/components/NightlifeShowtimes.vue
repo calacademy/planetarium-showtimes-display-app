@@ -25,7 +25,7 @@
         <div id="nl-logo">
           <img class="btn-img-reload" src="~assets/nl-logo.png" />
         </div>
-        <div id="nl-sponsor-tag">
+        <div class="nl-sponsor-tag">
           <p>NightLife is supported by the Koret Foundation.</p>
         </div>
       </footer>
@@ -333,7 +333,7 @@ export default {
         float: left;
         margin-top: 30px;
       }
-      #nl-sponsor-tag {
+      .nl-sponsor-tag {
         width: 500px;
         height: 200px;
         float: left;
