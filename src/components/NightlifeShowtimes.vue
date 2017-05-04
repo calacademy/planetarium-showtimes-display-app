@@ -2,7 +2,6 @@
   <div id="nightlife-showtimes">
     <spinner :show="loading"></spinner>
     <div id="nightlife-showtimes-container">
-      <h1>night<span class="header-strong">life</span></h1>
       <h2>Tonight in the Planetarium</h2>
       <div id="empty-tab-item" tabindex="1"></div>
       <ul>
@@ -27,7 +26,7 @@
           <img class="btn-img-reload" src="~assets/nl-logo.png" />
         </div>
         <div id="nl-sponsor-tag">
-          NightLife is supported by the Koret Foundation.
+          <p>NightLife is supported by the Koret Foundation.</p>
         </div>
       </footer>
     </div>
@@ -237,12 +236,15 @@ export default {
   top: 0;
   left: 0;
   z-index: 2;
-  background-color: $nl-bgcolor;
+  //background-color: $nl-bgcolor;
+  background-image: url('~assets/nl-bg-gradient.png');
+  background-repeat: no-repeat;
+  background-position: 0 0;
   color: $nl-color-text;
   width: $screen-width;
   height: $screen-height;
   #nightlife-showtimes-container {
-    padding: 105px 130px;
+    padding: 68px 100px;
     max-height: 1180px;
     overflow: hidden;
     h1 {
@@ -255,11 +257,11 @@ export default {
       }
     }
     h2 {
-      margin: 62px 0 35px 0;
+      margin: 0 0 38px 0;
       color: $nl-color-headers;
       font-weight: 600;
       font-size: $nl-font-size-h2;
-      line-height: $nl-font-size-h2 + 10;
+      line-height: $nl-font-size-h2 + 6;
     }
     ul {
       margin: 0;
@@ -269,7 +271,7 @@ export default {
     }
     li {
       display: block;
-      margin: 0 20px 30px 0;
+      margin: 0 20px 36px 0;
       padding: 0;
       width: $screen-width - 260;
       float: left;
@@ -284,11 +286,11 @@ export default {
       }
       .body {
         color: $nl-color-text;
-        margin-bottom: 22px;
+        margin-bottom: 30px;
         font-weight: 400;
         font-size: $nl-font-size-show-body;
         line-height: $nl-font-size-show-body + 8;
-        // width: 700px;
+        width: 700px;
         opacity: 0.2;
       }
       div.showtime {
@@ -308,7 +310,7 @@ export default {
     }
     footer {
       position: fixed;
-      bottom: 105px;
+      bottom: 66px;
       h3 {
         font-weight: 600;
         font-size: $nl-footer-h3;
@@ -327,24 +329,30 @@ export default {
         }
       }
       #nl-logo {
-        width: 270px;
+        width: 340px;
         float: left;
-        margin-top: 8px;
+        margin-top: 30px;
       }
       #nl-sponsor-tag {
-        font-size: $nl-sponsor-tag;
-        line-height: $nl-sponsor-tag;
-        color: $nl-color-text;
-        font-weight: 500;
         width: 500px;
+        height: 200px;
         float: left;
-        margin-top: 64px;
+        background-image: url('~assets/nl-branding.png');
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        p {
+          font-size: $nl-sponsor-tag;
+          line-height: $nl-sponsor-tag;
+          color: $nl-color-text;
+          font-weight: 500;
+          margin-top: 150px;
+        }
       }
       .access {
         margin-top: 40px;
         padding-left: 60px;
         height: 90px;
-        background-image: url('~assets/wheelchair-yellow.png');
+        background-image: url('~assets/wheelchair.png');
         background-repeat: no-repeat;
         background-position: 0 0;
         background-size: 4.5%;
