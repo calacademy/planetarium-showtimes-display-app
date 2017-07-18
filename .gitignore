@@ -2,10 +2,8 @@
 node_modules/
 .env
 dist/
-dist.zip
 static/fonts/
 npm-debug.log
 test/unit/coverage
 test/e2e/reports
 selenium-debug.log
-.elasticbeanstalk/*
