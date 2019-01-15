@@ -5,7 +5,7 @@
         <circle class="path" fill="none" stroke-width="8" stroke-linecap="round" cx="25" cy="25" r="16"></circle>
       </svg>
     </transition>
-  <div>
+  </div>
 </template>
 
 <script>

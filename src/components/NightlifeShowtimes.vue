@@ -10,13 +10,12 @@
           <div v-html="show.body" :key="'body' + '' + show.nid" class="body"></div>
           <showtime v-for="(foo, index) in show.time_slots" :time="foo" :class="'iter-' + index" :key="foo"></showtime>
         </li>
-      <ul>
+      </ul>
       <footer>
         <div id="nl-pass-message">
           <p>
             <strong>Please arrive 15 minutes before showtime.</strong><br />
-            No admittance after theater doors close.<br />
-            Showpasses are distributed on a first-come, first-served basis.
+            No admittance after theater doors close.
           </p>
           <div class="access">
             <p>Please see attendant for accessible entrance.</p>

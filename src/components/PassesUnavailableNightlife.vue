@@ -1,10 +1,7 @@
 <template>
   <div id="passes-unavailable-standby">
     <div id="passes-unavailable-standby-container">
-      <h1>Planetarium showpasses are no longer available tonight.</h1>
-      <p>
-        Please check with a staff member about a standby line.
-      </p>
+      <h1>Planetarium show passes are sold out for tonight.</h1>
     </div>
   </div>
 </template>

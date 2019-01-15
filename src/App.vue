@@ -45,7 +45,7 @@
           @keyup.enter="revealComponent('PassesUnavailableNightlife')"
           @click="revealComponent('PassesUnavailableNightlife')"
           class="menu-button">
-          <span>NightLife showpasses no longer available</span>
+          <span>NightLife showpasses are sold out</span>
         </div>
       </div>
     </div>
