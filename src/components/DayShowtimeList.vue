@@ -24,7 +24,7 @@
         <p>
           <strong>Please arrive 15 minutes before showtime.</strong><br />
           No admittance after theater doors close.<br />
-          Showpasses are distributed on a first-come, first-served basis.
+          Showpasses are distributed on a first-come, first-served basis. Shows may not be appropriate for children under 7 and we regret we cannot permit any child under 4.
         </p>
         <p>
           <em><strong>Members:</strong> Inquire about Members-Only passes!</em>
@@ -230,7 +230,10 @@ export default {
   top: 0;
   left: 0;
   z-index: 2;
-  background-color: $blue;
+  //background-color: $blue;
+  background-image: url('~assets/daytime-bg.png');
+  background-repeat: no-repeat;
+  background-position: 0 0;
   width: $screen-width;
   height: $screen-height;
   #day-showtime-list-container {
@@ -287,13 +290,13 @@ export default {
     li.active {
       .special-restriction {
           opacity: 1.0;
-          color: $blue-highlight-dark;
+          color: $highlight;
       }
       .title {
           opacity: 1.0;
       }
       .highlight {
-        color: $blue-highlight-light !important;
+        color: $highlight !important;
       }
     }
     #empty-tab-item {
@@ -308,7 +311,7 @@ export default {
         line-height: $font-size-footer + 8;
         color: $white;
         font-weight: 400;
-        margin-bottom: 36px;
+        margin-bottom: 16px;
         width: 800px;
         em {
           font-style: oblique;
@@ -318,8 +321,8 @@ export default {
         }
       }
       .access {
-        margin-top: 46px;
-        margin-bottom: 27px;
+        margin-top: 32px;
+        margin-bottom: 24px;
         padding-left: 60px;
         height: 90px;
         background-image: url('~assets/wheelchair.png');
