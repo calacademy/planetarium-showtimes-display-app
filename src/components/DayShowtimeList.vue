@@ -26,9 +26,6 @@
           No admittance after theater doors close.<br />
           Showpasses are distributed on a first-come, first-served basis. Shows may not be appropriate for children under 7 and we regret we cannot permit any child under 4.
         </p>
-        <p>
-          <em><strong>Members:</strong> Inquire about Members-Only passes!</em>
-        </p>
         <div class="access">
           <p>Please see attendant for accessible entrance.</p>
         </div>
